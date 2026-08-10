@@ -1,1 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Finance - AgriSense AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <h2>🌱 AgriSense AI</h2>
+
+        <a href="index.html">
+            🏠 Dashboard
+        </a>
+
+        <a href="land.html">
+            🌾 Land Information
+        </a>
+
+        <a href="weather.html">
+            🌦 Weather Analysis
+        </a>
+
+        <a href="preparation.html">
+            🚜 Land Preparation
+        </a>
+
+        <a href="crop.html">
+            🌱 Crop Recommendation
+        </a>
+
+        <a href="disease.html">
+            🍂 Disease Detection
+        </a>
+
+        <a href="fertilizer.html">
+            🌿 Seed & Fertilizer
+        </a>
+
+        <a href="rotation.html">
+            🔄 Crop Rotation
+        </a>
+
+        <a href="calendar.html">
+            📅 Crop Calendar
+        </a>
+
+        <a href="finance.html">
+            💰 Finance
+        </a>
+
+        <a href="schemes.html">
+            🏛 Government Schemes
+        </a>
+
+        <a href="history.html">
+            📜 Prediction History
+        </a>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <div class="main">
+
+        <h1>
+            💰 Finance Calculator
+        </h1>
+
+        <p>
+            Calculate estimated income and profit using
+            the production and financial details entered
+            by the farmer.
+        </p>
+
+
+        <!-- ================= FORM ================= -->
+
+        <div class="land-form">
+
+            <h2>
+                💰 Enter Finance Details
+            </h2>
+
+
+            <!-- Crop -->
+
+            <label>
+                Crop
+            </label>
+
+            <select id="crop_name">
+
+                <option value="">
+                    Select Crop
+                </option>
+
+                <option value="Rice">
+                    Rice
+                </option>
+
+                <option value="Wheat">
+                    Wheat
+                </option>
+
+                <option value="Maize">
+                    Maize
+                </option>
+
+                <option value="Potato">
+                    Potato
+                </option>
+
+                <option value="Mustard">
+                    Mustard
+                </option>
+
+            </select>
+
+
+            <br>
+            <br>
+
+
+            <!-- Land Area -->
+
+            <label>
+                Land Area
+            </label>
+
+            <input
+                type="number"
+                id="land_area"
+                placeholder="Land Area (Acres)"
+                min="0.01"
+                step="0.01"
+            >
+
+
+            <br>
+            <br>
+
+
+            <!-- Production -->
+
+            <label>
+                Production
+            </label>
+
+            <input
+                type="number"
+                id="production"
+                placeholder="Production (Quintals)"
+                min="0.01"
+                step="0.01"
+            >
+
+
+            <br>
+            <br>
+
+
+            <!-- Investment -->
+
+            <label>
+                Investment
+            </label>
+
+            <input
+                type="number"
+                id="investment"
+                placeholder="Investment (₹)"
+                min="0"
+                step="0.01"
+            >
+
+
+            <br>
+            <br>
+
+
+            <!-- Selling Price -->
+
+            <label>
+                Selling Price
+            </label>
+
+            <input
+                type="number"
+                id="selling_price"
+                placeholder="Selling Price (₹/Quintal)"
+                min="0"
+                step="0.01"
+            >
+
+
+            <br>
+            <br>
+
+
+            <!-- Calculate -->
+
+            <button
+                id="calculateFinanceBtn"
+                type="button"
+            >
+
+                💰 Calculate Profit
+
+            </button>
+
+
+        </div>
+
+
+        <br>
+
+
+        <!-- ================= RESULT ================= -->
+
+        <div class="land-display">
+
+            <h2>
+                💰 Finance Result
+            </h2>
+
+
+            <div id="financeResult">
+
+                <div class="parcel">
+
+                    <p>
+                        Enter your details and click
+                        <strong>
+                            Calculate Profit
+                        </strong>
+                        to see the result.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= DISCLAIMER ================= -->
+
+        <div
+            class="parcel"
+            style="margin-top:20px;"
+        >
+
+            
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="finance.js"></script>
+
+
+</body>
+
+</html>
