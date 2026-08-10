@@ -1,1 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Analysis - AgriSense AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <h2>🌱 AgriSense AI</h2>
+
+        <a href="index.html">🏠 Dashboard</a>
+
+        <a href="land.html">🌾 Land Information</a>
+
+        <a href="weather.html">🌦 Weather</a>
+
+        <a href="preparation.html">🚜 Land Preparation</a>
+
+        <a href="crop.html">🌱 Crop Recommendation</a>
+
+        <a href="disease.html">🍂 Disease Detection</a>
+
+        <a href="fertilizer.html">🌿 Seed & Fertilizer</a>
+
+        <a href="rotation.html">🔄 Crop Rotation</a>
+
+        <a href="calendar.html">📅 Crop Calendar</a>
+
+        <a href="finance.html">💰 Finance</a>
+
+        <a href="schemes.html">🏛 Government Schemes</a>
+
+        <a href="history.html">📜 Prediction History</a>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <div class="main weather-main">
+
+        <h1>🌦 Weather-Based Crop Suitability Analysis</h1>
+
+        <p class="weather-description">
+            Enter weather conditions to check which crops are suitable.
+        </p>
+
+
+        <!-- ================= WEATHER FORM ================= -->
+
+        <div class="weather-form">
+
+            <!-- Temperature -->
+
+            <input
+                type="number"
+                id="temperature"
+                placeholder="Temperature (°C)"
+            >
+
+
+            <!-- Humidity -->
+
+            <input
+                type="number"
+                id="humidity"
+                placeholder="Humidity (%)"
+                min="0"
+                max="100"
+            >
+
+
+            <!-- Precipitation -->
+
+            <input
+                type="number"
+                id="precipitation"
+                placeholder="Precipitation (%)"
+                min="0"
+                max="100"
+            >
+
+
+            <!-- Wind -->
+
+            <select id="wind">
+
+                <option value="">
+                    Wind Speed
+                </option>
+
+                <option value="Low">
+                    Low
+                </option>
+
+                <option value="Moderate">
+                    Moderate
+                </option>
+
+                <option value="High">
+                    High
+                </option>
+
+            </select>
+
+
+            <!-- Analyze Button -->
+
+            <button
+                onclick="analyzeWeather()"
+                class="weather-button"
+            >
+                Analyze Weather
+            </button>
+
+        </div>
+
+
+        <!-- ================= RESULT ================= -->
+
+        <div id="weatherResult"></div>
+
+    </div>
+
+
+    <script src="weather.js"></script>
+
+</body>
+
+</html>
