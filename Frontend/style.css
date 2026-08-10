@@ -1,0 +1,617 @@
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7f5;
+    color: #222;
+}
+
+
+/* ================================
+   SIDEBAR
+================================ */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 255px;
+    height: 100vh;
+
+    background: #176b2c;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+
+    z-index: 1000;
+}
+
+
+/* Sidebar Heading */
+
+.sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    font-size: 22px;
+}
+
+
+/* Sidebar Links */
+
+.sidebar a {
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 10px;
+
+    margin-bottom: 5px;
+
+    border-radius: 8px;
+
+    display: block;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+
+/* Sidebar Hover */
+
+.sidebar a:hover {
+    background: #0f8a3a;
+}
+
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.main {
+    margin-left: 255px;
+
+    padding: 30px;
+
+    min-height: 100vh;
+
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   WELCOME SECTION
+================================ */
+
+.welcome {
+    margin-bottom: 25px;
+}
+
+.welcome h1 {
+    margin-bottom: 8px;
+
+    font-size: 32px;
+}
+
+.welcome p {
+    color: #666;
+
+    font-size: 17px;
+}
+
+
+/* ================================
+   DASHBOARD STATISTICS
+================================ */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 20px;
+
+    margin: 25px 0 35px;
+}
+
+
+/* Statistics Card */
+
+.stat-card {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    transition: 0.2s;
+}
+
+
+/* Statistics Card Hover */
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+
+/* Statistics Icon */
+
+.stat-card h2 {
+    margin: 0;
+
+    font-size: 30px;
+}
+
+
+/* Statistics Number */
+
+.stat-card h3 {
+    font-size: 32px;
+
+    margin: 10px 0;
+
+    color: #176b2c;
+}
+
+
+/* Statistics Text */
+
+.stat-card p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 15px;
+}
+
+
+/* ================================
+   FEATURE SECTION
+================================ */
+
+.main > h2 {
+    margin-bottom: 20px;
+}
+
+
+/* ================================
+   FEATURE CARDS
+================================ */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+
+/* Feature Card */
+
+.card {
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+    text-decoration: none;
+
+    color: #222;
+
+    display: block;
+
+    transition: 0.2s;
+}
+
+
+/* Feature Card Hover */
+
+.card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Feature Card Heading */
+
+.card h3 {
+    margin-top: 0;
+
+    margin-bottom: 10px;
+
+    color: #176b2c;
+}
+
+
+/* Feature Card Paragraph */
+
+.card p {
+    color: #666;
+
+    line-height: 1.5;
+
+    margin-bottom: 0;
+}
+
+
+/* ================================
+   FORM ELEMENTS
+================================ */
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    margin-bottom: 10px;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: #176b2c;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+button {
+    background: #176b2c;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+
+button:hover {
+    background: #0f8a3a;
+}
+
+
+/* ================================
+   RESULT / HISTORY CARDS
+================================ */
+
+.history-card {
+    background: white;
+
+    padding: 20px;
+
+    margin-top: 15px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .main {
+        margin-left: 210px;
+
+        padding: 20px;
+    }
+
+    .welcome h1 {
+        font-size: 26px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 500px) {
+
+    .sidebar {
+        width: 190px;
+
+        padding: 15px;
+    }
+
+    .sidebar h2 {
+        font-size: 18px;
+    }
+
+    .sidebar a {
+        font-size: 13px;
+
+        padding: 10px 7px;
+    }
+
+    .main {
+        margin-left: 190px;
+
+        padding: 15px;
+    }
+
+}
+
+/* =================================
+   WEATHER ANALYSIS
+================================= */
+
+.weather-main {
+    padding-top: 25px;
+}
+
+.weather-main h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.weather-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+/* Weather Form */
+
+.weather-form {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    max-width: 1005px;
+}
+
+
+/* Inputs and Select */
+
+.weather-form input,
+.weather-form select {
+
+    width: 100%;
+
+    height: 44px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    background: white;
+
+    box-sizing: border-box;
+}
+
+
+.weather-form input:focus,
+.weather-form select:focus {
+
+    outline: none;
+
+    border-color: #176b2c;
+
+}
+
+
+/* Analyze Button */
+
+.weather-button {
+
+    height: 44px;
+
+    padding: 10px 20px;
+
+    background: #176b2c;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+}
+
+
+.weather-button:hover {
+
+    background: #0f8a3a;
+
+}
+
+
+/* Result */
+
+.weather-result {
+
+    max-width: 1005px;
+
+    margin-top: 25px;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+}
+
+
+/* Suitable Result */
+
+.weather-result.suitable {
+
+    background: #d4edda;
+
+    border-left: 5px solid #176b2c;
+
+}
+
+
+/* No Suitable Result */
+
+.weather-result.not-suitable {
+
+    background: #f8d7da;
+
+    border-left: 5px solid #dc3545;
+
+}
+
+
+/* Crop List */
+
+.crop-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 15px;
+
+}
+
+
+.crop-item {
+
+    background: white;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+}
+
+
+/* Weather Summary */
+
+.weather-summary {
+
+    max-width: 1005px;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.weather-summary h3 {
+
+    color: #176b2c;
+
+}
+
+
+.weather-note {
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .weather-form {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
