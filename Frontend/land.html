@@ -1,1 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Land Information</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="sidebar">
+
+    <h2>🌱 AgriSense AI</h2>
+
+    <a href="index.html">🏠 Dashboard</a>
+    <a href="land.html">🌾 Land Information</a>
+    <a href="weather.html">🌦 Weather</a>
+    <a href="preparation.html">🚜 Land Preparation</a>
+    <a href="crop.html">🌱 Crop Recommendation</a>
+    <a href="disease.html">🍂 Disease Detection</a>
+    <a href="fertilizer.html">🌿 Seed & Fertilizer</a>
+    <a href="rotation.html">🔄 Crop Rotation</a>
+    <a href="calendar.html">📅 Crop Calendar</a>
+    <a href="finance.html">💰 Finance</a>
+    <a href="schemes.html">🏛 Government Schemes</a>
+    <a href="history.html">📜 Prediction History</a>
+
+</div>
+
+
+
+<div class="main">
+
+
+<h1>🌾 Land Information</h1>
+
+<p>Manage your agricultural land details.</p>
+
+
+
+<div class="land-container">
+
+
+
+<!-- LEFT SIDE FORM -->
+
+<div class="land-form">
+
+
+<h2>Add Land</h2>
+
+
+<form id="landForm">
+
+
+<input 
+type="text"
+id="land_name"
+placeholder="Land Name"
+required>
+
+
+
+<input
+type="text"
+id="location"
+placeholder="Location"
+required>
+
+
+
+<input
+type="number"
+id="area"
+placeholder="Area (Acres)"
+required>
+
+
+
+<select id="soil_type" required>
+
+<option value="">
+Select Soil Type
+</option>
+
+<option value="Clay">
+Clay
+</option>
+
+<option value="Loamy">
+Loamy
+</option>
+
+<option value="Sandy">
+Sandy
+</option>
+
+<option value="Silty">
+Silty
+</option>
+
+</select>
+
+
+
+<input
+type="text"
+id="current_crop"
+placeholder="Current Crop"
+required>
+
+
+
+<button type="submit">
+Save Land
+</button>
+
+
+</form>
+
+
+</div>
+
+
+
+
+
+<!-- RIGHT SIDE DISPLAY -->
+
+
+<div class="land-display">
+
+
+<h2>Land Parcel</h2>
+
+
+<div class="parcel">
+
+
+<p>
+📍 Location : --
+</p>
+
+
+<p>
+🌾 Area : -- Acres
+</p>
+
+
+<p>
+🌱 Soil Type : --
+</p>
+
+
+<p>
+🌿 Current Crop : --
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+<script src="land.js"></script>
+
+
+</body>
+
+</html>
