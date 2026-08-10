@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Disease Detection</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>🌱 AgriSense AI</h2>
+
+
+<a href="index.html">🏠 Dashboard</a>
+<a href="land.html">🌾 Land Information</a>
+<a href="weather.html">🌦 Weather</a>
+<a href="preparation.html">🚜 Land Preparation</a>
+<a href="crop.html">🌱 Crop Recommendation</a>
+<a href="disease.html">🍂 Disease Detection</a>
+<a href="fertilizer.html">🌿 Seed & Fertilizer</a>
+<a href="rotation.html">🔄 Crop Rotation</a>
+<a href="calendar.html">📅 Crop Calendar</a>
+<a href="finance.html">💰 Finance</a>
+<a href="schemes.html">🏛 Government Schemes</a>
+<a href="history.html">📜 Prediction History</a>
+
+
+</div>
+
+
+
+
+<!-- Main Content -->
+
+<div class="main">
+
+
+<h1>🍂 Disease Detection</h1>
+
+<p>
+Upload a clear leaf image to detect plant diseases.
+</p>
+
+
+
+<div class="land-form">
+
+
+<h2>📷 Upload Leaf Image</h2>
+
+
+<p>
+Take a clear photo of the affected leaf and upload it here.
+</p>
+
+
+<input 
+type="file"
+id="leafImage"
+accept=".jpg,.jpeg,.png"
+>
+
+
+
+<p>
+Supported formats: JPG, JPEG, PNG
+</p>
+
+
+
+<button onclick="detectDisease()">
+
+Detect Disease
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<div class="land-display">
+
+
+<h2>🍃 Detection Result</h2>
+
+
+
+<div class="parcel" id="result">
+
+
+<p>
+🍂 Disease : --
+</p>
+
+
+<p>
+🔍 Symptoms : --
+</p>
+
+
+<p>
+💊 Treatment : --
+</p>
+
+
+<p>
+🛡 Prevention : --
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+<script src="disease.js"></script>
+
+
+</body>
+
+</html>
