@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crop Rotation</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="sidebar">
+
+<h2>🌱 AgriSense AI</h2>
+
+
+<a href="index.html">🏠 Dashboard</a>
+<a href="land.html">🌾 Land Information</a>
+<a href="weather.html">🌦 Weather</a>
+<a href="preparation.html">🚜 Land Preparation</a>
+<a href="crop.html">🌱 Crop Recommendation</a>
+<a href="disease.html">🍂 Disease Detection</a>
+<a href="fertilizer.html">🌿 Seed & Fertilizer</a>
+<a href="rotation.html">🔄 Crop Rotation</a>
+<a href="calendar.html">📅 Crop Calendar</a>
+<a href="finance.html">💰 Finance</a>
+<a href="schemes.html">🏛 Government Schemes</a>
+<a href="history.html">📜 Prediction History</a>
+
+
+</div>
+
+
+
+
+
+<div class="main">
+
+
+<h1>🔄 Crop Rotation</h1>
+
+
+<p>
+Get suitable next crops to maintain soil health.
+</p>
+
+
+
+
+<div class="land-form">
+
+
+<h2>Select Current Crop</h2>
+
+
+<select id="crop">
+
+
+<option value="">
+Select Crop
+</option>
+
+
+<option value="Rice">
+Rice
+</option>
+
+
+<option value="Wheat">
+Wheat
+</option>
+
+
+<option value="Potato">
+Potato
+</option>
+
+
+<option value="Maize">
+Maize
+</option>
+
+
+<option value="Sugarcane">
+Sugarcane
+</option>
+
+<option value="Mustard">
+Mustard
+</option>
+
+<option value="Cotton">
+Cotton
+</option>
+
+</select>
+
+
+
+<button onclick="getRotation()">
+
+Get Rotation Plan
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="land-display">
+
+
+<h2>🔄 Rotation Result</h2>
+
+
+<div class="parcel" id="result">
+
+
+<p>
+Current Crop : --
+</p>
+
+
+<p>
+Recommended Next Crops : --
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script src="rotation.js"></script>
+
+
+</body>
+
+</html>
