@@ -1,1 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Crop Recommendation - AgriSense AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <h2>🌱 AgriSense AI</h2>
+
+
+        <a href="index.html">
+            🏠 Dashboard
+        </a>
+
+
+        <a href="land.html">
+            🌾 Land Information
+        </a>
+
+
+        <a href="weather.html">
+            🌦 Weather 
+        </a>
+
+
+        <a href="preparation.html">
+            🚜 Land Preparation
+        </a>
+
+
+        <a href="crop.html">
+            🌱 Crop Recommendation
+        </a>
+
+
+        <a href="disease.html">
+            🍂 Disease Detection
+        </a>
+
+
+        <a href="fertilizer.html">
+            🌿 Seed & Fertilizer
+        </a>
+
+
+        <a href="rotation.html">
+            🔄 Crop Rotation
+        </a>
+
+
+        <a href="calendar.html">
+            📅 Crop Calendar
+        </a>
+
+        <a href="finance.html">
+            💰 Finance
+        </a>
+
+        <a href="schemes.html">
+            🏛 Government Schemes
+        </a>
+
+
+        <a href="history.html">
+            📜 Prediction History
+        </a>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <div class="main">
+
+
+        <h1>
+            🌱 Crop Recommendation
+        </h1>
+
+
+        <p>
+            AI based crop selection according to
+            land conditions.
+        </p>
+
+
+
+        <!-- ================= FORM ================= -->
+
+        <div class="land-form">
+
+
+            <h2>
+                Select Details
+            </h2>
+
+
+            <!-- Land -->
+
+            <label>
+                Land
+            </label>
+
+            <select id="land_select">
+
+                <option value="">
+                    Select Land
+                </option>
+
+            </select>
+
+
+            <!-- Season -->
+
+            <label>
+                Season
+            </label>
+
+
+            <select id="season">
+
+                <option value="">
+                    Select Season
+                </option>
+
+
+                <option value="Kharif">
+                    Kharif
+                </option>
+
+
+                <option value="Rabi">
+                    Rabi
+                </option>
+
+            </select>
+
+
+
+            <!-- Irrigation -->
+
+            <label>
+                Irrigation
+            </label>
+
+
+            <select id="irrigation">
+
+                <option value="">
+                    Select Irrigation
+                </option>
+
+
+                <option value="Good">
+                    Good
+                </option>
+
+
+                <option value="Medium">
+                    Medium
+                </option>
+
+
+                <option value="Low">
+                    Low
+                </option>
+
+            </select>
+
+
+
+            <!-- Button -->
+
+            <button
+                id="recommendBtn"
+                type="button"
+            >
+                🌱 Recommend Crop
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ================= RESULT ================= -->
+
+        <div class="land-display">
+
+
+            <h2>
+                🌾 Recommendation Result
+            </h2>
+
+
+            <div
+                class="parcel"
+                id="result"
+            >
+
+
+                <p>
+                    Recommended Crop : --
+                </p>
+
+
+                <p>
+                    Reason : --
+                </p>
+
+
+                <p>
+                    Water Requirement : --
+                </p>
+
+
+                <p>
+                    Duration : --
+                </p>
+
+
+                <p>
+                    Expected Yield : --
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <script src="crop.js"></script>
+
+
+</body>
+
+</html>
