@@ -9,20 +9,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const recommendButton =
         document.getElementById("recommendBtn");
 
-    recommendButton.addEventListener(
-        "click",
-        function (event) {
+    if (recommendButton) {
 
-            // IMPORTANT: prevent page refresh
-            event.preventDefault();
+        recommendButton.addEventListener(
+            "click",
+            function (event) {
 
-            recommendCrop();
+                // Prevent page refresh
+                event.preventDefault();
 
-        }
-    );
+                recommendCrop();
 
+            }
+        );
 
-    // Restore previous recommendation if page reloads
+    }
+
+    // Restore previous recommendation
     restoreRecommendation();
 
 });
@@ -37,11 +40,27 @@ async function loadLands() {
     const select =
         document.getElementById("land_select");
 
+    if (!select) {
+
+        console.error(
+            "Land select element not found."
+        );
+
+        return;
+
+    }
+
     try {
 
-       const response = await fetch(
-    "https://agrisense-ai-fua5.onrender.com/crop/lands"
+        // ======================================
+        // GET SAVED LANDS
+        // ======================================
+
+        const response = await fetch(
+            "https://agrisense-ai-fua5.onrender.com/crop/lands"
         );
+
+
         if (!response.ok) {
 
             throw new Error(
@@ -50,33 +69,107 @@ async function loadLands() {
 
         }
 
+
+        // ======================================
+        // READ LAND DATA
+        // ======================================
+
         const lands =
             await response.json();
 
 
-        select.innerHTML = `
-            <option value="">
-                Select Land
-            </option>
-        `;
+        console.log(
+            "Lands received:",
+            lands
+        );
 
+
+        // ======================================
+        // CLEAR DROPDOWN
+        // ======================================
+
+        select.innerHTML = "";
+
+
+        // ======================================
+        // DEFAULT OPTION
+        // ======================================
+
+        const defaultOption =
+            document.createElement("option");
+
+        defaultOption.value = "";
+
+        defaultOption.textContent =
+            "Select Land";
+
+        select.appendChild(
+            defaultOption
+        );
+
+
+        // ======================================
+        // CHECK LAND DATA
+        // ======================================
+
+        if (
+            !Array.isArray(lands) ||
+            lands.length === 0
+        ) {
+
+            const emptyOption =
+                document.createElement("option");
+
+            emptyOption.value = "";
+
+            emptyOption.textContent =
+                "No land available";
+
+            select.appendChild(
+                emptyOption
+            );
+
+            return;
+
+        }
+
+
+        // ======================================
+        // ADD LANDS TO DROPDOWN
+        // ======================================
 
         lands.forEach(function (land) {
 
             const option =
                 document.createElement("option");
 
+
+            // Store complete land information
             option.value =
                 JSON.stringify(land);
 
-            option.textContent =
-                land.land_name;
 
-            select.appendChild(option);
+            // Display land name and location
+            option.textContent =
+                land.land_name +
+                " - " +
+                land.location;
+
+
+            select.appendChild(
+                option
+            );
 
         });
 
+
+        console.log(
+            "Dropdown options:",
+            select.options.length
+        );
+
     }
+
 
     catch (error) {
 
@@ -85,11 +178,28 @@ async function loadLands() {
             error
         );
 
-        select.innerHTML = `
-            <option value="">
-                Unable to load lands
-            </option>
-        `;
+
+        // ======================================
+        // SHOW ERROR
+        // ======================================
+
+        select.innerHTML = "";
+
+
+        const errorOption =
+            document.createElement("option");
+
+
+        errorOption.value = "";
+
+
+        errorOption.textContent =
+            "Unable to load lands";
+
+
+        select.appendChild(
+            errorOption
+        );
 
     }
 
@@ -102,22 +212,34 @@ async function loadLands() {
 
 async function recommendCrop() {
 
-    const landValue =
+    const landSelect =
         document.getElementById(
             "land_select"
-        ).value;
+        );
+
+
+    const seasonSelect =
+        document.getElementById(
+            "season"
+        );
+
+
+    const irrigationSelect =
+        document.getElementById(
+            "irrigation"
+        );
+
+
+    const landValue =
+        landSelect.value;
 
 
     const season =
-        document.getElementById(
-            "season"
-        ).value;
+        seasonSelect.value;
 
 
     const irrigation =
-        document.getElementById(
-            "irrigation"
-        ).value;
+        irrigationSelect.value;
 
 
     // ======================================
@@ -126,7 +248,9 @@ async function recommendCrop() {
 
     if (landValue === "") {
 
-        alert("Please select land.");
+        alert(
+            "Please select land."
+        );
 
         return;
 
@@ -135,7 +259,9 @@ async function recommendCrop() {
 
     if (season === "") {
 
-        alert("Please select season.");
+        alert(
+            "Please select season."
+        );
 
         return;
 
@@ -144,7 +270,9 @@ async function recommendCrop() {
 
     if (irrigation === "") {
 
-        alert("Please select irrigation.");
+        alert(
+            "Please select irrigation."
+        );
 
         return;
 
@@ -152,22 +280,34 @@ async function recommendCrop() {
 
 
     // ======================================
-    // READ LAND
+    // READ LAND INFORMATION
     // ======================================
 
     let land;
 
+
     try {
 
-        land = JSON.parse(landValue);
+        land =
+            JSON.parse(
+                landValue
+            );
 
     }
 
+
     catch (error) {
 
-        console.error(error);
+        console.error(
+            "Land parsing error:",
+            error
+        );
 
-        alert("Invalid land information.");
+
+        alert(
+            "Invalid land information."
+        );
+
 
         return;
 
@@ -175,26 +315,39 @@ async function recommendCrop() {
 
 
     // ======================================
-    // REQUEST DATA
+    // PREPARE REQUEST DATA
     // ======================================
 
     const cropData = {
 
-        land_name: land.land_name,
+        land_name:
+            land.land_name,
 
-        location: land.location,
+        location:
+            land.location,
 
-        soil_type: land.soil_type,
+        soil_type:
+            land.soil_type,
 
-        season: season,
+        season:
+            season,
 
-        irrigation: irrigation
+        irrigation:
+            irrigation
 
     };
 
 
+    console.log(
+        "Crop request:",
+        cropData
+    );
+
+
     const resultBox =
-        document.getElementById("result");
+        document.getElementById(
+            "result"
+        );
 
 
     // ======================================
@@ -208,7 +361,9 @@ async function recommendCrop() {
             text-align:center;
         ">
 
-            <h3>🌱 Analyzing...</h3>
+            <h3>
+                🌱 Analyzing...
+            </h3>
 
             <p>
                 Please wait...
@@ -222,37 +377,50 @@ async function recommendCrop() {
     try {
 
         // ==================================
-        // API CALL
+        // SEND REQUEST TO BACKEND
         // ==================================
 
-        const response = await fetch(
-    "https://agrisense-ai-fua5.onrender.com/crop/lands"
-);
+        const response =
+            await fetch(
 
-            {
-                method: "POST",
+                "https://agrisense-ai-fua5.onrender.com/crop/recommend",
 
-                headers: {
-                    "Content-Type":
-                        "application/json"
-                },
+                {
 
-                body:
-                    JSON.stringify(cropData)
-            }
+                    method: "POST",
 
-        );
+                    headers: {
 
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body:
+                        JSON.stringify(
+                            cropData
+                        )
+
+                }
+
+            );
+
+
+        // ==================================
+        // CHECK RESPONSE
+        // ==================================
 
         if (!response.ok) {
 
             const errorText =
                 await response.text();
 
+
             console.error(
                 "Backend response:",
                 errorText
             );
+
 
             throw new Error(
                 "Backend returned an error"
@@ -262,7 +430,7 @@ async function recommendCrop() {
 
 
         // ==================================
-        // GET RESULT
+        // GET RECOMMENDATION
         // ==================================
 
         const result =
@@ -280,8 +448,13 @@ async function recommendCrop() {
         // ==================================
 
         sessionStorage.setItem(
+
             "cropRecommendation",
-            JSON.stringify(result)
+
+            JSON.stringify(
+                result
+            )
+
         );
 
 
@@ -289,9 +462,12 @@ async function recommendCrop() {
         // DISPLAY RESULT
         // ==================================
 
-        displayRecommendation(result);
+        displayRecommendation(
+            result
+        );
 
     }
+
 
     catch (error) {
 
@@ -315,8 +491,7 @@ async function recommendCrop() {
                 </h3>
 
                 <p>
-                    Please make sure the backend
-                    is running.
+                    Please try again later.
                 </p>
 
             </div>
@@ -332,10 +507,21 @@ async function recommendCrop() {
 // DISPLAY RECOMMENDATION
 // ==========================================
 
-function displayRecommendation(result) {
+function displayRecommendation(
+    result
+) {
 
     const resultBox =
-        document.getElementById("result");
+        document.getElementById(
+            "result"
+        );
+
+
+    if (!resultBox) {
+
+        return;
+
+    }
 
 
     resultBox.innerHTML = `
@@ -354,11 +540,14 @@ function displayRecommendation(result) {
                 color:#176b2c;
                 margin-top:0;
             ">
+
                 🌱 Crop Recommendation
+
             </h2>
 
 
             <p>
+
                 <strong>
                     🌾 Recommended Crop:
                 </strong>
@@ -368,9 +557,13 @@ function displayRecommendation(result) {
                     font-weight:bold;
                 ">
 
-                    ${result.recommended_crop || "--"}
+                    ${
+                        result.recommended_crop
+                        || "--"
+                    }
 
                 </span>
+
             </p>
 
 
@@ -380,7 +573,10 @@ function displayRecommendation(result) {
                     📌 Reason:
                 </strong>
 
-                ${result.reason || "--"}
+                ${
+                    result.reason
+                    || "--"
+                }
 
             </p>
 
@@ -391,7 +587,10 @@ function displayRecommendation(result) {
                     💧 Water Requirement:
                 </strong>
 
-                ${result.water_requirement || "--"}
+                ${
+                    result.water_requirement
+                    || "--"
+                }
 
             </p>
 
@@ -402,7 +601,10 @@ function displayRecommendation(result) {
                     ⏳ Duration:
                 </strong>
 
-                ${result.crop_duration || "--"}
+                ${
+                    result.crop_duration
+                    || "--"
+                }
 
             </p>
 
@@ -413,7 +615,10 @@ function displayRecommendation(result) {
                     🌾 Expected Yield:
                 </strong>
 
-                ${result.expected_yield || "--"}
+                ${
+                    result.expected_yield
+                    || "--"
+                }
 
             </p>
 
@@ -446,18 +651,28 @@ function restoreRecommendation() {
     try {
 
         const result =
-            JSON.parse(savedResult);
+            JSON.parse(
+                savedResult
+            );
 
 
-        displayRecommendation(result);
+        displayRecommendation(
+            result
+        );
 
     }
+
 
     catch (error) {
 
         console.error(
             "Unable to restore recommendation:",
             error
+        );
+
+
+        sessionStorage.removeItem(
+            "cropRecommendation"
         );
 
     }
