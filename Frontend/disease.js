@@ -36,7 +36,7 @@ async function detectDisease(){
 
         const response = await fetch(
 
-            "https://agrisense-ai-fua5.onrender.com/prediction",
+            "https://agrisense-ai-fua5.onrender.com/disease/detect",
 
             {
 
