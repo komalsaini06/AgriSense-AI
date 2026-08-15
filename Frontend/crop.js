@@ -39,10 +39,9 @@ async function loadLands() {
 
     try {
 
-        const response = await fetch("https://agrisense-ai-fua5.onrender.com/crop/recommend")
-            
-        ;
-
+       const response = await fetch(
+    "https://agrisense-ai-fua5.onrender.com/crop/lands"
+        );
         if (!response.ok) {
 
             throw new Error(
