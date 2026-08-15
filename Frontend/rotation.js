@@ -32,7 +32,7 @@ async function getRotation(){
 
         const response = await fetch(
 
-            "http://127.0.0.1:8000/rotation/recommend",
+            "https://agrisense-ai-fua5.onrender.com/rotation/recommend",
 
             {
 
