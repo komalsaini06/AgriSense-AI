@@ -615,3 +615,185 @@ button:hover {
     }
 
 }
+
+/* =================================
+   CROP RECOMMENDATION
+================================= */
+
+.crop-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    width: 100%;
+
+    max-width: 650px;
+}
+
+
+/* Crop Form Group */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    width: 100%;
+}
+
+
+/* Crop Form Labels */
+
+.form-group label {
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #333;
+
+    margin-bottom: 2px;
+}
+
+
+/* Crop Dropdowns */
+
+.form-group select {
+    width: 100%;
+
+    max-width: 650px;
+
+    height: 46px;
+
+    padding: 10px 14px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #222;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    margin-bottom: 0;
+}
+
+
+/* Crop Dropdown Focus */
+
+.form-group select:focus {
+
+    outline: none;
+
+    border-color: #176b2c;
+
+    box-shadow:
+        0 0 0 2px rgba(23, 107, 44, 0.10);
+
+}
+
+
+/* Recommend Button */
+
+#recommendBtn {
+
+    width: fit-content;
+
+    padding: 12px 22px;
+
+    background: #176b2c;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    margin-top: 5px;
+}
+
+
+/* Recommend Button Hover */
+
+#recommendBtn:hover {
+
+    background: #0f8a3a;
+
+}
+
+
+/* =================================
+   CROP RECOMMENDATION RESULT
+================================= */
+
+#result {
+
+    width: 100%;
+
+    max-width: 650px;
+
+}
+
+
+/* Recommendation Result Card */
+
+#result > div {
+
+    margin-top: 20px;
+
+}
+
+
+/* =================================
+   CROP MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 700px) {
+
+    .crop-form {
+
+        max-width: 100%;
+
+    }
+
+
+    .form-group select {
+
+        max-width: 100%;
+
+    }
+
+
+    #result {
+
+        max-width: 100%;
+
+    }
+
+
+    #recommendBtn {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+}
