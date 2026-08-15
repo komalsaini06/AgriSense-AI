@@ -226,8 +226,8 @@ async function recommendCrop() {
         // ==================================
 
         const response = await fetch(
-
-            "https://agrisense-ai-fua5.onrender.com/crop/recommend",
+    "https://agrisense-ai-fua5.onrender.com/crop/lands"
+);
 
             {
                 method: "POST",
