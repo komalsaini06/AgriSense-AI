@@ -39,7 +39,7 @@ async function getPreparation(){
 
         const response = await fetch(
 
-            "http://127.0.0.1:8000/preparation/recommend",
+            "https://agrisense-ai-fua5.onrender.com/preparation/recommend",
 
             {
 
