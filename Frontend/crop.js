@@ -39,7 +39,7 @@ async function loadLands() {
 
     try {
 
-        const response = await fetch("https://agrisense-ai-fua5.onrender.com/prediction")
+        const response = await fetch("https://agrisense-ai-fua5.onrender.com/crop/recommend")
             
         ;
 
@@ -228,7 +228,7 @@ async function recommendCrop() {
 
         const response = await fetch(
 
-            "http://127.0.0.1:8000/crop/recommend",
+            "https://agrisense-ai-fua5.onrender.com/crop/recommend",
 
             {
                 method: "POST",
