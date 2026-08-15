@@ -3,7 +3,7 @@ async function loadDashboardStats(){
     try{
 
         const response = await fetch(
-            "https://agrisense-ai-fua5.onrender.com/prediction"
+            "https://agrisense-ai-fua5.onrender.com/dashboard"
         );
 
 
