@@ -32,7 +32,7 @@ async function getFertilizer(){
 
         const response = await fetch(
 
-            "http://127.0.0.1:8000/fertilizer/recommend",
+            "https://agrisense-ai-fua5.onrender.com/fertilizer/recommend",
 
             {
 
