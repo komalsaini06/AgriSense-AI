@@ -185,7 +185,7 @@ async function calculateFinance() {
 
         const response = await fetch(
 
-            "http://127.0.0.1:8000/finance",
+            "https://agrisense-ai-fua5.onrender.com/finance",
 
             {
 
