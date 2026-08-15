@@ -33,7 +33,7 @@ async function getCalendar(){
 
         const response = await fetch(
 
-            "http://127.0.0.1:8000/calendar/recommend",
+           fetch("https://agrisense-ai-fua5.onrender.com/prediction"),
 
             {
 
