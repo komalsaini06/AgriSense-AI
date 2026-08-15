@@ -12,7 +12,10 @@
 
     <title>Crop Recommendation - AgriSense AI</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -20,236 +23,226 @@
 <body>
 
 
-    <!-- ================= SIDEBAR ================= -->
+<!-- ==========================================
+     SIDEBAR
+     ========================================== -->
 
-    <div class="sidebar">
+<div class="sidebar">
 
-        <h2>🌱 AgriSense AI</h2>
+    <h2>🌱 AgriSense AI</h2>
 
+    <a href="index.html">
+        🏠 Dashboard
+    </a>
 
-        <a href="index.html">
-            🏠 Dashboard
-        </a>
+    <a href="land.html">
+        🌾 Land Information
+    </a>
 
+    <a href="weather.html">
+        🌦 Weather
+    </a>
 
-        <a href="land.html">
-            🌾 Land Information
-        </a>
+    <a href="preparation.html">
+        🚜 Land Preparation
+    </a>
 
+    <a href="crop.html">
+        🌱 Crop Recommendation
+    </a>
 
-        <a href="weather.html">
-            🌦 Weather 
-        </a>
+    <a href="disease.html">
+        🍂 Disease Detection
+    </a>
 
+    <a href="fertilizer.html">
+        🌿 Seed & Fertilizer
+    </a>
 
-        <a href="preparation.html">
-            🚜 Land Preparation
-        </a>
+    <a href="rotation.html">
+        🔄 Crop Rotation
+    </a>
 
+    <a href="calendar.html">
+        📅 Crop Calendar
+    </a>
 
-        <a href="crop.html">
-            🌱 Crop Recommendation
-        </a>
+    <a href="finance.html">
+        💰 Finance
+    </a>
 
+    <a href="schemes.html">
+        🏛 Government Schemes
+    </a>
 
-        <a href="disease.html">
-            🍂 Disease Detection
-        </a>
-
-
-        <a href="fertilizer.html">
-            🌿 Seed & Fertilizer
-        </a>
-
-
-        <a href="rotation.html">
-            🔄 Crop Rotation
-        </a>
-
-
-        <a href="calendar.html">
-            📅 Crop Calendar
-        </a>
-
-        <a href="finance.html">
-            💰 Finance
-        </a>
-
-        <a href="schemes.html">
-            🏛 Government Schemes
-        </a>
+</div>
 
 
-        
-    </div>
+<!-- ==========================================
+     MAIN CONTENT
+     ========================================== -->
+
+<div class="main">
 
 
-    <!-- ================= MAIN CONTENT ================= -->
+    <!-- ======================================
+         PAGE HEADER
+         ====================================== -->
 
-    <div class="main">
-
+    <div class="welcome">
 
         <h1>
             🌱 Crop Recommendation
         </h1>
-
 
         <p>
             AI based crop selection according to
             land conditions.
         </p>
 
+    </div>
 
 
-        <!-- ================= FORM ================= -->
+    <!-- ======================================
+         SELECT DETAILS
+         ====================================== -->
 
-        <div class="land-form">
+    <div class="card">
 
-
-            <h2>
-                Select Details
-            </h2>
-
-
-            <!-- Land -->
-
-            <label>
-                Land
-            </label>
-
-            <select id="land_select">
-
-                <option value="">
-                    Select Land
-                </option>
-
-            </select>
+        <h2>
+            Select Details
+        </h2>
 
 
-            <!-- Season -->
-
-            <label>
-                Season
-            </label>
+        <div class="crop-form">
 
 
-            <select id="season">
+            <!-- ==================================
+                 LAND
+                 ================================== -->
 
-                <option value="">
-                    Select Season
-                </option>
+            <div class="form-group">
 
+                <label for="land_select">
+                    Land
+                </label>
 
-                <option value="Kharif">
-                    Kharif
-                </option>
+                <select id="land_select">
 
+                    <option value="">
+                        Select Land
+                    </option>
 
-                <option value="Rabi">
-                    Rabi
-                </option>
+                </select>
 
-            </select>
-
-
-
-            <!-- Irrigation -->
-
-            <label>
-                Irrigation
-            </label>
+            </div>
 
 
-            <select id="irrigation">
+            <!-- ==================================
+                 SEASON
+                 ================================== -->
 
-                <option value="">
-                    Select Irrigation
-                </option>
+            <div class="form-group">
+
+                <label for="season">
+                    Season
+                </label>
+
+                <select id="season">
+
+                    <option value="">
+                        Select Season
+                    </option>
+
+                    <option value="Kharif">
+                        Kharif
+                    </option>
+
+                    <option value="Rabi">
+                        Rabi
+                    </option>
+
+                    <option value="Zaid">
+                        Zaid
+                    </option>
+
+                </select>
+
+            </div>
 
 
-                <option value="Good">
-                    Good
-                </option>
+            <!-- ==================================
+                 IRRIGATION
+                 ================================== -->
+
+            <div class="form-group">
+
+                <label for="irrigation">
+                    Irrigation
+                </label>
+
+                <select id="irrigation">
+
+                    <option value="">
+                        Select Irrigation
+                    </option>
+
+                    <option value="Good">
+                        Good
+                    </option>
+
+                    <option value="Moderate">
+                        Moderate
+                    </option>
+
+                    <option value="Poor">
+                        Poor
+                    </option>
+
+                </select>
+
+            </div>
 
 
-                <option value="Medium">
-                    Medium
-                </option>
-
-
-                <option value="Low">
-                    Low
-                </option>
-
-            </select>
-
-
-
-            <!-- Button -->
+            <!-- ==================================
+                 RECOMMEND BUTTON
+                 ================================== -->
 
             <button
-                id="recommendBtn"
                 type="button"
+                id="recommendBtn"
             >
+
                 🌱 Recommend Crop
+
             </button>
 
 
         </div>
 
+    </div>
 
 
-        <!-- ================= RESULT ================= -->
+    <!-- ======================================
+         RESULT
+         ====================================== -->
 
-        <div class="land-display">
-
-
-            <h2>
-                🌾 Recommendation Result
-            </h2>
-
-
-            <div
-                class="parcel"
-                id="result"
-            >
-
-
-                <p>
-                    Recommended Crop : --
-                </p>
-
-
-                <p>
-                    Reason : --
-                </p>
-
-
-                <p>
-                    Water Requirement : --
-                </p>
-
-
-                <p>
-                    Duration : --
-                </p>
-
-
-                <p>
-                    Expected Yield : --
-                </p>
-
-
-            </div>
-
-
-        </div>
-
+    <div
+        id="result"
+        style="margin-top: 25px;"
+    >
 
     </div>
 
 
-    <script src="crop.js"></script>
+</div>
+
+
+<!-- ==========================================
+     JAVASCRIPT
+     ========================================== -->
+
+<script src="crop.js"></script>
 
 
 </body>
