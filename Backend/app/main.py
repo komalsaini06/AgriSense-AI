@@ -29,7 +29,7 @@ from app.routes.rotation_route import router as rotation_router
 from app.routes.calendar_route import router as calendar_router
 from app.routes.scheme_route import router as scheme_router
 from app.routes.finance_route import router as finance_router
-from app.routes.history_route import router as history_router
+#from app.routes.history_route import router as history_router
 from app.routes.dashboard_route import router as dashboard_router
 
 
@@ -78,7 +78,7 @@ app.include_router(rotation_router)
 app.include_router(calendar_router)
 app.include_router(scheme_router)
 app.include_router(finance_router)
-app.include_router(history_router)
+#app.include_router(history_router)
 app.include_router(dashboard_router)
 
 
