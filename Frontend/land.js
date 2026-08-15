@@ -36,7 +36,7 @@ landForm.addEventListener("submit", async function(event){
 
 
         const response = await fetch(
-            "http://127.0.0.1:8000/land",
+            "https://agrisense-ai-fua5.onrender.com/land",
             {
                 method:"POST",
 
@@ -93,7 +93,7 @@ async function loadLand(){
 
 
         const response = await fetch(
-            "http://127.0.0.1:8000/land"
+            "https://agrisense-ai-fua5.onrender.com/land"
         );
 
 
